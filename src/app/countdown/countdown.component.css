@@ -1,0 +1,27 @@
+ul {
+    list-style-type: none;
+  }
+
+  .selling-left {
+    text-align: center;
+  }
+
+  .selling-left ul li{
+    display: inline-block;
+    padding: 22px;
+    background-color: beige;
+    text-align: center;
+    border:2px solid black ;
+    margin: 20px 5px;
+    width: 10%;
+
+  }
+
+  .selling-left ul li span{ 
+      display: block;
+  }
+
+  .selling-left ul .count-date{
+      font-size: 25px;
+      font-weight: bold;
+  }

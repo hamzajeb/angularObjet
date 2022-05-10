@@ -1,0 +1,41 @@
+<div class="row">
+<div class="col-md-8 mt-4 mx-auto">
+    <div class="card" style="border: 2px solid black;padding: 20px;">
+        <div class="caerd-body">
+            <h3 class="card-title">Contacts {{Date | date:"shortDate"}}</h3>
+            <table class="table bg-dark ">
+                <thead class="bg-dark text-warning">
+                    <tr>
+                        <td>Nom</td>
+                        <td>prenom</td>
+                        <td>tel</td>
+                        <td>action</td>
+                        <td>sex</td>
+                        <td>status</td>
+                    </tr>
+                </thead>
+                <tbody class="bg-dark text-white" >
+                    <tr *ngFor="let contacte of Contactes;let i=index">
+                        <td>{{contacte.nom | uppercase}}</td>
+                        <td>{{contacte.prenom}}</td>
+                        <td>{{contacte.tel}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="removeContact(i)"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                        <td  *ngIf="contacte.statut=='active';else inactive"><button type="button" class="btn btn-outline-warning">active</button></td>
+                        <ng-template #inactive>
+                           <td> <button type="button" class="btn btn-outline-light">en attente</button></td>
+                        </ng-template>
+                        <td [ngSwitch]="contacte.sex">
+                            <span *ngSwitchCase="'homme'">H</span>
+                            <span *ngSwitchCase="'femme'">F</span>
+                            <span *ngSwitchDefault>***</span>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

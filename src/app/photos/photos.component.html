@@ -1,0 +1,17 @@
+
+    <br>
+    <br>
+    <app-carousel [imagess]="images" ></app-carousel> 
+    <br>
+    <br>
+    <app-carousel [imagess]="images"   [indicators]="false" [controls]="false" [autoSlide]="true"></app-carousel> 
+    <br>
+    <br>
+    <!-- notification -->
+    <div class="container">
+        <div class="notification">
+            <em class="far fa-bell icon" [ngClass]="{'notify':notify}"></em><!-- c-a-d if notify==true appliquer class css (notify) -->
+            <span class="badge" *ngIf="count>0">{{count}}</span>
+        </div>
+        <button class="btn-send ripple" (click)="onSendClick()">Send Notification</button>
+    </div>

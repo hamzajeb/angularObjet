@@ -1,0 +1,26 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div [ngClass]="toggleProperty ? 'flipped':''" class="card1">
+        <div class="front">
+            <filp-card-back>
+                <div>FRONT</div>
+            </filp-card-back>
+            <div class="arrow-icon" (click)="toggle()">
+                <i style="color: white;" class="fa-solid fa-angle-left"></i>
+            </div>
+        </div>
+        <div class="back">
+            <filp-card-front>
+                <div>BACK</div>
+            </filp-card-front>
+            <div class="arrow-icon" (click)="toggle()">
+                <i style="color: white;" class="fa-solid fa-angle-left"></i>
+            </div>
+        </div>
+    </div>
+</div>
